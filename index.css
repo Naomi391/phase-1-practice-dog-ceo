@@ -1,0 +1,50 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+#dog-image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#dog-image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#breed-dropdown {
+  font-size: 14px;
+  padding: 5px;
+}
+
+#dog-breeds {
+  list-style-type: none;
+  padding: 0;
+}
+
+#dog-breeds li {
+  font-size: 16px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#dog-breeds li:hover {
+  color: red;
+}

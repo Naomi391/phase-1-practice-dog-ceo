@@ -39,8 +39,29 @@ document.addEventListener("DOMContentLoaded", function () {
           });
           list.appendChild(listItem);
         });
+
+        const dropdown = document.getElementById("breed-dropdown");
+        dropdown.addEventListener("change", function () {
+          filterBreeds(dropdown.value);
+        });
       })
       .catch((error) => console.error("Error fetching breeds:", error));
+  }
+
+  function filterBreeds(selectedLetter) {
+    const breedList = document.getElementById("dog-breeds");
+    const breedItems = breedList.getElementsByTagName("li");
+
+    for (let i = 0; i < breedItems.length; i++) {
+      const breedItem = breedItems[i];
+      const breedName = breedItem.textContent.toLowerCase();
+
+      if (breedName.startsWith(selectedLetter)) {
+        breedItem.style.display = "list-item";
+      } else {
+        breedItem.style.display = "none";
+      }
+    }
   }
 
   fetchDogs();
